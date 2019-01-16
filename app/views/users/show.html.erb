@@ -11,10 +11,29 @@
   <section class="section">
     <div class="container">
       <figure class="media-left">
-		<p class="image is-64x64">
+		<p class="image is-128x128">
 		  <%= gravatar_image_tag(@user.email, size: 64) %>
 		</p>
-	  </figure>
+	  </figure><br />
+
+          <%= render "follow_form" if user_signed_in? %><br />
+
+          <div>
+            <p class="heading">Tweets</p>
+            <p class="title is-6"><%= current_user.tweets.count %></p>
+          </div>
+        
+          <div>
+            <p class="heading">Following</p>
+            <p class="title is-6"><%= current_user.following.count %></p>
+          </div>
+       
+        
+          <div>
+            <p class="heading">Followers</p>
+            <p class="title is-6"><%= current_user.followers.count %></p>
+          </div>
+
       <h1 class="users">
         Name: <strong><%= @user.name %></strong>
       </h1>
