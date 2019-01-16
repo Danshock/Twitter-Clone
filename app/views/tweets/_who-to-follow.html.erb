@@ -5,56 +5,18 @@
 	<div class="panel-block">
 		<article class="media">
 			<div class="media-left">
-				<figure class="image is-32x32">
-					<img src="https://bulma.io/images/placeholders/64x64.png">
-				</figure>
+				<% @users.first(3).each do |user| %>
+				  <figure class="image is-32x32">
+					<%= gravatar_image_tag(user.email, size: 32) %>
+				  </figure>
+				<% end %>
 			</div>
 			<div class="media-content">
 				<div class="content">
-					<p>
-						<strong>John Doe</strong>
-						<small>@johndoe</small>
-					</p>
+					<% @users.first(3).each do |user| %>
+						<p> <%= link_to user.name, user %> </p>
+					<% end %>
 				</div>
 			</div>
 		</article>
 	</div>
-
-	<div class="panel-block">
-		<article class="media">
-			<div class="media-left">
-				<figure class="image is-32x32">
-					<img src="https://bulma.io/images/placeholders/64x64.png">
-				</figure>
-			</div>
-			<div class="media-content">
-				<div class="content">
-					<p>
-						<strong>Jon Smith</strong>
-						<small>@jonsmith</small>
-					</p>
-				</div>
-			</div>
-		</article>
-	</div>
-
-	<div class="panel-block">
-		<article class="media">
-			<div class="media-left">
-				<figure class="image is-32x32">
-					<img src="https://bulma.io/images/placeholders/64x64.png">
-				</figure>
-			</div>
-			<div class="media-content">
-				<div class="content">
-					<p>
-						<strong>Arthur Morgan</strong>
-						<small>@arthurmorgan</small>
-					</p>
-				</div>
-			</div>
-		</article>
-	</div>
-	
-  </nav>
-</div>
