@@ -31,9 +31,21 @@
                 <nav class="level">
                   <div class="level-left is-mobile">
 
-                    <%= button_to "Like", tweet_likes_path(tweet), method: :post, class: "level-item" %>
-                      <small class="level-item"><%= @tweet.likes.count %> <%= (@tweet.likes.count) == 1 ? 'Like' : 'Likes' %></small>
 
+                    <!-- LIKE FUNCTIONALITY --> 
+
+                    <%= button_to "Like", tweet_likes_path(tweet), method: :post, class: "level-item" %>
+
+                      <small class="level-item"><%= @tweet.likes.count %> <%= (@tweet.likes.count) == 1 ? 'Like' : 'Likes' %>
+                      </small>
+
+
+
+
+
+
+                  <!-- Restrict users to delete/edit only their tweets -->
+                  <% if current_user.id == tweet.user_id %>
                       <%= link_to edit_tweet_path(tweet), class: "level-item" do %>
                         <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
                         <% end %>
@@ -43,6 +55,7 @@
                             <% end %>
                   </div>
                 </nav>
+                <% end %>
                 <% end %>
             </div>
           </article>

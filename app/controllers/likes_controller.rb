@@ -1,6 +1,9 @@
 class LikesController < ApplicationController
 	before_action :find_tweet
 
+	def index
+	end
+
 	def create
 		@tweet.likes.create(user_id: current_user.id)
 		redirect_to tweet_path(@tweet)
