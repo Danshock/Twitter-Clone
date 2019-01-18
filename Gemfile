@@ -49,7 +49,7 @@ gem 'gravatar_image_tag', '~> 1.2'
 gem 'devise', '~> 4.5'
 
 # Faker
-gem 'faker', '1.7.3'
+gem 'faker', github: 'stympy/faker'
 
 # jQuery
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'

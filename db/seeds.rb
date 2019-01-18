@@ -5,7 +5,8 @@ User.create!(name:  "Example User",
              password:              "foobar",
              password_confirmation: "foobar")
 
-60.times do |n|
+# Populate the database with 99 accounts
+50.times do |n|
   name  = Faker::Name.name
   username = "username-#{n+1}"
   email = "example-#{n+1}@railstutorial.org"
@@ -24,3 +25,10 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+# Create some tweets
+users = User.limit(10)
+users.each do |user|
+  tweets_content = Faker::Quote.famous_last_words
+  Tweet.create!(tweet: tweets_content, user_id: user.id)
+end
