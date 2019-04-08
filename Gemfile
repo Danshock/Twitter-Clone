@@ -46,7 +46,7 @@ gem 'simple_form', '~> 4.1'
 gem 'gravatar_image_tag', '~> 1.2'
 
 # Devise
-gem 'devise', '~> 4.5'
+gem "devise", ">= 4.6.0"
 
 # Faker
 gem 'faker', github: 'stympy/faker'
