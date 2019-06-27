@@ -2,6 +2,8 @@
 
 Recreating the Twitter website
 
+[Demo](https://tweeeterclone.herokuapp.com/)
+
 ## Getting started
 
 To get started with the app, clone the repo and then install the needed gems:
