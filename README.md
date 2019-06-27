@@ -13,11 +13,11 @@ $ bundle install --without production
 Next, create and migrate the database:
 
 ```
-$ rake db:create
+$ rails db:create
 ```
 
 ```
-$ rake db:migrate
+$ rails db:migrate
 ```
 
 Next, seed the database with a few users and tweets:
